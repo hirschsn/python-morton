@@ -1,0 +1,15 @@
+Build using:
+	python setup.py build_ext
+
+
+Sample usage:
+	$ python
+	>>> import morton
+	>>> morton.xy2d(3, 2)
+	14
+	>>> morton.d2xy(14)
+	(3, 2)
+	>>> morton.d2xyz(14)
+	(1, 1, 2)
+	>>> morton.xyz2d(1, 1, 2)
+	14
