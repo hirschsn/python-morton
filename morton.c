@@ -10,9 +10,9 @@ static char d2xyz_docstr[] = "Reverse of xyz2d.";
 static const unsigned mask1_2d = 0xAAAAAAAA;
 static const unsigned mask2_2d = 0x55555555;
 
-static const unsigned mask1_3d = 0x24924924;
+static const unsigned mask1_3d = 0x49249249;
 static const unsigned mask2_3d = 0x92492492;
-static const unsigned mask3_3d = 0x49249249;
+static const unsigned mask3_3d = 0x24924924;
 
 static unsigned
 _xy2d(unsigned x, unsigned y)
@@ -75,7 +75,7 @@ d2xyz(PyObject *self, PyObject *args)
 	if (!PyArg_ParseTuple(args, "i", &d))
 		return NULL;
 
-	return Py_BuildValue("iii", 
+	return Py_BuildValue("iii",
 			     _d2x(d, mask1_3d),
 			     _d2x(d, mask2_3d),
 			     _d2x(d, mask3_3d));
