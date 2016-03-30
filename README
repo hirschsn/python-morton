@@ -3,6 +3,7 @@ Build using:
 
 
 Sample usage:
+        Coordinates are ordered as (x, y) in 2D and (x, y, z) in 3D.
 	$ python
 	>>> import morton
 	>>> morton.xy2d(3, 2)
