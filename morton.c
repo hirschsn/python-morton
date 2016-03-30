@@ -7,8 +7,8 @@ static char d2xy_docstr[] = "Reverse of xy2d.";
 static char xyz2d_docstr[] = "Calculates the morton index of a three-dimensional index.";
 static char d2xyz_docstr[] = "Reverse of xyz2d.";
 
-static const unsigned mask1_2d = 0xAAAAAAAA;
-static const unsigned mask2_2d = 0x55555555;
+static const unsigned mask1_2d = 0x55555555;
+static const unsigned mask2_2d = 0xAAAAAAAA;
 
 static const unsigned mask1_3d = 0x49249249;
 static const unsigned mask2_3d = 0x92492492;
