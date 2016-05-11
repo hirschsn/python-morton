@@ -2,8 +2,17 @@ Build using:
 	python setup.py build_ext
 
 
-Sample usage:
+Internal data handling:
         Coordinates are ordered as (x, y) in 2D and (x, y, z) in 3D.
+        Those Coordinates are mapped to an internal Morton-ordering of
+        ... y2    y1    y0               in 2D
+               x2    x1    x0
+        ... z2       z1       z0         in 3D
+               y2       y1       y0
+                  x2       x1       x0
+
+
+Sample usage:
 	$ python
 	>>> import morton
 	>>> morton.xy2d(3, 2)
