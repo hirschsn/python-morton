@@ -89,8 +89,17 @@ static PyMethodDef morton_methods[] = {
 	{NULL, NULL, 0, NULL}
 };
 
-PyMODINIT_FUNC
-initmorton(void)
+static struct PyModuleDef cMorton =
 {
-	Py_InitModule("morton", morton_methods);
+    PyModuleDef_HEAD_INIT,
+    "morton",
+    "",
+    -1,
+    morton_methods
+};
+
+PyMODINIT_FUNC
+PyInit_morton(void)
+{
+	return PyModule_Create(&cMorton);
 }
