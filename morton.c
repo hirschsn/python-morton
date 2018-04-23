@@ -89,8 +89,27 @@ static PyMethodDef morton_methods[] = {
 	{NULL, NULL, 0, NULL}
 };
 
+#if (PY_MAJOR_VERSION == 3)
+static struct PyModuleDef cMorton =
+{
+    PyModuleDef_HEAD_INIT,
+    "morton",
+    "",
+    -1,
+    morton_methods
+};
+
+PyMODINIT_FUNC
+PyInit_morton(void)
+{
+	return PyModule_Create(&cMorton);
+}
+#elif (PY_MAJOR_VERSION == 2)
 PyMODINIT_FUNC
 initmorton(void)
 {
-	Py_InitModule("morton", morton_methods);
+    Py_InitModule("morton", morton_methods);
 }
+#else
+#error "Only Python 2 and 3 are supported\n"
+#endif
