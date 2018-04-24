@@ -17,15 +17,15 @@ static const unsigned mask3_3d = 0x24924924;
 static unsigned
 _xy2d(unsigned x, unsigned y)
 {
-	return _pdep_u32(x, mask1_2d) + _pdep_u32(y, mask2_2d);
+	return _pdep_u32(x, mask1_2d) | _pdep_u32(y, mask2_2d);
 }
 
 static unsigned
 _xyz2d(unsigned x, unsigned y, unsigned z)
 {
 	return _pdep_u32(x, mask1_3d)
-		+ _pdep_u32(y, mask2_3d)
-		+ _pdep_u32(z, mask3_3d);
+		| _pdep_u32(y, mask2_3d)
+		| _pdep_u32(z, mask3_3d);
 }
 
 static unsigned
